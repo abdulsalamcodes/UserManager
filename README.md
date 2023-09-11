@@ -1,37 +1,58 @@
-# HNG Task Two Solution.
+# UserManager API
 
-Brief project description or introduction goes here.
+UserManager is a versatile REST API tailored for managing person-related data. It empowers you with the fundamental Create, Read, Update, and Delete (CRUD) operations on a "person" resource, enabling seamless interaction with person data. This API shines with its ability to dynamically handle parameters, making tasks like adding or retrieving a person by name a breeze.
+
+## Features
+- **Create**: Effortlessly add new person records to the database.
+- **Read**: Retrieve individual person details or obtain a comprehensive list of all persons.
+- **Update**: Modify existing person records with ease.
+- **Delete**: Effortlessly remove person records when they are no longer needed.
 
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
+- [Starting the App](#starting-the-app)
 - [Documentation](#documentation)
-
 
 ## Prerequisites
 
-List any software, tools, or dependencies that need to be installed or set up before running the API.
+Before getting started with the UserManager API, ensure that you have the following prerequisites in place:
 
-- Prerequisite 1
-- Prerequisite 2
+- Familiarity with Node.js and Express.js.
+- PostgreSQL installed and configured on your system.
 
 ## Installation
 
-Provide step-by-step instructions on how to install the project and its dependencies.
+To set up the project locally, follow these step-by-step instructions:
 
-```bash
-# Clone the repository
-git clone https://github.com/your/repository.git
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/abdulsalamcodes/UserManager.git
+   ```
 
-# Change directory to the project folder
-cd project-folder
+2. Navigate to the project folder:
+   ```bash
+   cd UserManager
+   ```
 
-# Install dependencies
-npm install
+3. Install project dependencies using npm:
+   ```bash
+   npm install
+   ```
 
+## Starting the App
+
+To start the UserManager API, use the following npm script:
+
+ ```bash
+npm start
 ```
+
+This command will launch the API using [nodemon](https://www.npmjs.com/package/nodemon) with ECMAScript modules (ESM) support.
 
 ## Documentation
 
-[Documentation](/DOCUMENTATION.md)
+For in-depth information about the UserManager API, consult our comprehensive [documentation](/DOCUMENTATION.md). This documentation file outlines essential details such as request/response formats, setup instructions, sample API usage, known limitations, and more. It serves as your go-to resource for understanding and utilizing the API effectively.
+
+

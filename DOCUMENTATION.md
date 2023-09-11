@@ -181,7 +181,6 @@ Update user details by specifying the user ID.
 
     **Status Code**: 500 (Internal Server Error)
     ```json
-    
     {
     "success": false,
     "errors": ["Internal server error."]
@@ -208,11 +207,11 @@ Delete a user by specifying the user ID.
     -  **Status Code**:  404 (Not Found)
 
     ```json
-    
     {
     "success": false,
     "errors": ["User not found."]
     }
+    ```
 
     -  **Status Code**:  500 (Internal Server Error)
 
@@ -230,10 +229,7 @@ Delete a user by specifying the user ID.
 ```http
 POST /api/users
 Content-Type: application/json
-```
 
-
-```json
 {
   "name": "John Doe"
 }
