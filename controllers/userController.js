@@ -1,4 +1,4 @@
-import client from "../utils/queries";
+import pool from "../utils/dbConfig";
 
 export const createUser = async (req, res) => {
   try {
@@ -21,7 +21,7 @@ export const createUser = async (req, res) => {
     const query = "INSERT INTO users (name) VALUES ($1) RETURNING *";
     const values = [name];
 
-    const newuser = await client.query(query, values);
+    const newuser = await pool.query(query, values);
 
     if (newuser.rows.length === 0) {
       return res.status(500).json({
@@ -52,7 +52,7 @@ export const createUser = async (req, res) => {
 export const getAllUsers = async (req, res) => {
   try {
     // Fetch all users from the database
-    const response = await client.query("SELECT * FROM users");
+    const response = await pool.query("SELECT * FROM users");
 
     // Respond with the fetched users
     res.status(200).json({
@@ -77,7 +77,7 @@ export const getUser = async (req, res) => {
   const values = [user_id];
 
   try {
-    const response = await client.query(query, values);
+    const response = await pool.query(query, values);
 
     if (response.rows.length === 0) {
       return res.status(404).json({
@@ -109,7 +109,7 @@ export const updateUser = async (req, res) => {
   const values = [name, user_id];
 
   try {
-    const response = await client.query(query, values);
+    const response = await pool.query(query, values);
 
     if (response.rows.length === 0) {
       return res.status(404).json({
@@ -140,7 +140,7 @@ export const deleteUser = async (req, res) => {
   const values = [user_id];
 
   try {
-    const response = await client.query(query, values);
+    const response = await pool.query(query, values);
 
     if (response.rows.length === 0) {
       return res.status(404).json({
