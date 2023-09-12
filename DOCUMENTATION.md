@@ -8,7 +8,7 @@ This document provides information about the API endpoints, request/response for
 
 Create a new user with a unique name.
 
-- **URL**: `/api/users`
+- **URL**: `/api`
 - **Method**: `POST`
 - **Request Body**:
   ```json
@@ -57,7 +57,7 @@ Create a new user with a unique name.
 ### Get All Users
 Retrieve a list of all users.
 
--  **URL**:  /api/users
+-  **URL**:  /api
 -  **Method**:  GET
 -  **Success Response**: 
     -  **Status Code**:  200 (OK)
@@ -97,7 +97,7 @@ Retrieve a list of all users.
 ### Get a Specific User by ID
 Retrieve user details by specifying the user ID.
 
--  **URL**:  /api/users/:user_id
+-  **URL**:  /api/:param
 -  **Method**:  GET
 -  **Success Response**: 
     -  **Status Code**:  200 (OK)
@@ -141,7 +141,7 @@ Retrieve user details by specifying the user ID.
 ### Update a User by ID
 Update user details by specifying the user ID.
 
--  **URL**:  /api/users/:user_id
+-  **URL**:  /api/:param
 -  **Method**:  PUT
 - Request Body:
 
@@ -190,7 +190,7 @@ Update user details by specifying the user ID.
 ### Delete a User by ID
 Delete a user by specifying the user ID.
 
--  **URL**:  /api/users/:user_id
+-  **URL**:  /api/:param
 -  **Method**:  DELETE
 -  **Success Response**: 
     -  **Status Code**:  200 (OK)
@@ -227,7 +227,7 @@ Delete a user by specifying the user ID.
 ### Create a New User
 
 ```http
-POST /api/users
+POST /api
 Content-Type: application/json
 
 {
@@ -237,17 +237,17 @@ Content-Type: application/json
 
 ### Get All Users
 ```http 
-GET /api/users
+GET /api
 ```
 
 ### Get a Specific User by ID
 ```http
-GET /api/users/1
+GET /api/1
 
 ```
 ### Update a User by ID
 ```http
-PUT /api/users/1
+PUT /api/1
 ```
 
 Content-Type: application/json
@@ -259,7 +259,7 @@ Content-Type: application/json
 
 ### Delete a User by ID
 ```http
-DELETE /api/users/1
+DELETE /api/1
 ```
 ### Known Limitations
 

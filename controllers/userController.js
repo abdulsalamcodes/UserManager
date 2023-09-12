@@ -3,15 +3,19 @@ import pool from "../utils/dbConfig";
 export const createUser = async (req, res) => {
   try {
     const { name } = req.body;
+    const { param } = req.params;
 
-    if (!name) {
+    // Use the 'name' from the request body if provided, otherwise use the 'user_id' from the parameters
+    const userName = name ? name : param;
+
+    if (!userName) {
       return res.status(400).json({
         success: false,
         errors: ["Name is required."],
       });
     }
 
-    if (typeof name !== "string") {
+    if (typeof userName !== "string" || Number(userName)) {
       return res.status(400).json({
         success: false,
         errors: ["Name must be a string."],
@@ -19,7 +23,7 @@ export const createUser = async (req, res) => {
     }
 
     const query = "INSERT INTO users (name) VALUES ($1) RETURNING *";
-    const values = [name];
+    const values = [userName];
 
     const newuser = await pool.query(query, values);
 
@@ -72,9 +76,20 @@ export const getAllUsers = async (req, res) => {
 
 // Get a specific user by ID
 export const getUser = async (req, res) => {
-  const { user_id } = req.params;
-  const query = "SELECT * FROM users WHERE user_id = $1";
-  const values = [user_id];
+  const { param } = req.params;
+
+  // Check if 'param' is a valid value
+  if (!param) {
+    return res.status(400).json({
+      success: false,
+      errors: ["Please provide 'user_id' or 'name' in the params."],
+    });
+  }
+
+  // Determine which column to use based on 'param'
+  const columnName = isNaN(param) ? "name" : "user_id";
+  const query = `SELECT * FROM users WHERE ${columnName} = $1`;
+  const values = [param];
 
   try {
     const response = await pool.query(query, values);
@@ -103,10 +118,21 @@ export const getUser = async (req, res) => {
 
 // Update a user by ID
 export const updateUser = async (req, res) => {
-  const { user_id } = req.params;
   const { name } = req.body;
-  const query = "UPDATE users SET name = $1 WHERE user_id = $2 RETURNING *";
-  const values = [name, user_id];
+  const { param } = req.params;
+
+  // Check if 'param' is a valid value
+  if (!param) {
+    return res.status(400).json({
+      success: false,
+      errors: ["Please provide 'user_id' or 'name' in the params."],
+    });
+  }
+
+  // Determine which column to use based on 'param'
+  const columnName = isNaN(param) ? "name" : "user_id";
+  const query = `UPDATE users SET name = $1 WHERE ${columnName} = $2 RETURNING *`;
+  const values = [name, param];
 
   try {
     const response = await pool.query(query, values);
@@ -135,9 +161,20 @@ export const updateUser = async (req, res) => {
 
 // Delete a user by ID
 export const deleteUser = async (req, res) => {
-  const { user_id } = req.params;
-  const query = "DELETE FROM users WHERE user_id = $1 RETURNING *";
-  const values = [user_id];
+  const { param } = req.params;
+
+  // Check if 'param' is a valid value
+  if (!param) {
+    return res.status(400).json({
+      success: false,
+      errors: ["Please provide 'user_id' or 'name' in the params."],
+    });
+  }
+
+  // Determine which column to use based on 'param'
+  const columnName = isNaN(param) ? "name" : "user_id";
+  const query = `DELETE FROM users WHERE ${columnName} = $1 RETURNING *`;
+  const values = [param];
 
   try {
     const response = await pool.query(query, values);

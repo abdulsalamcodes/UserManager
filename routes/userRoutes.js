@@ -12,13 +12,14 @@ const userRouter = express.Router();
 // Define routes using a more readable format
 userRouter
   .route("/")
-  .get(getAllUsers) // GET /api/users
-  .post(createUser); // POST /api/users
+  .get(getAllUsers) // GET /api/
+  .post(createUser); // POST /api/
 
 userRouter
-  .route("/:user_id")
-  .get(getUser) // GET /api/users/:user_id
-  .put(updateUser) // PUT /api/users/:user_id
-  .delete(deleteUser); // DELETE /api/users/:user_id
+  .route("/:param")
+  .get(getUser) // GET /api/users/:param
+  .post(createUser) // POST /api/:param
+  .put(updateUser) // PUT /api/:param
+  .delete(deleteUser); // DELETE /api/:param
 
 export default userRouter;
