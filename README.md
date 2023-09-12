@@ -53,6 +53,6 @@ This command will launch the API using [nodemon](https://www.npmjs.com/package/n
 
 ## Documentation
 
-For in-depth information about the UserManager API, consult our comprehensive [documentation](/DOCUMENTATION.md). This documentation file outlines essential details such as request/response formats, setup instructions, sample API usage, known limitations, and more. It serves as your go-to resource for understanding and utilizing the API effectively.
+For comprehensive details on how to use the UserManager API effectively, please refer to our extensive [documentation](/DOCUMENTATION.md). This document provides in-depth information about various aspects, including request/response formats, setup instructions, sample API usage, known limitations, and more. It serves as your primary resource for understanding and maximizing the API's capabilities.
 
-
+You can also view the accompanying UML diagram by clicking [here](https://lucid.app/lucidchart/12bc1c82-52b5-4173-a20b-ecdb61836a1a/edit?viewport_loc=26%2C93%2C1593%2C868%2CHWEp-vi-RSFO&invitationId=inv_d2a9416e-39aa-4ae4-aecb-0877c5bd589b).

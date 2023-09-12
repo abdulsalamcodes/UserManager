@@ -57,8 +57,8 @@ Create a new user with a unique name.
 ### Get All Users
 Retrieve a list of all users.
 
--  **URL**:  /api
--  **Method**:  GET
+-  **URL**:  `/api`
+-  **Method**:  `GET`
 -  **Success Response**: 
     -  **Status Code**:  200 (OK)
     -  **Response Body**: 
@@ -97,8 +97,8 @@ Retrieve a list of all users.
 ### Get a Specific User by ID
 Retrieve user details by specifying the user ID.
 
--  **URL**:  /api/:param
--  **Method**:  GET
+-  **URL**:  `/api/:param`
+-  **Method**:  `GET`
 -  **Success Response**: 
     -  **Status Code**:  200 (OK)
     -  **Response Body**: 
@@ -141,8 +141,8 @@ Retrieve user details by specifying the user ID.
 ### Update a User by ID
 Update user details by specifying the user ID.
 
--  **URL**:  /api/:param
--  **Method**:  PUT
+-  **URL**:  `/api/:param`
+-  **Method**:  `PUT`
 - Request Body:
 
     ```json
@@ -190,8 +190,8 @@ Update user details by specifying the user ID.
 ### Delete a User by ID
 Delete a user by specifying the user ID.
 
--  **URL**:  /api/:param
--  **Method**:  DELETE
+-  **URL**:  `/api/:param`
+-  **Method**:  `DELETE`
 -  **Success Response**: 
     -  **Status Code**:  200 (OK)
     -  **Response Body**: 
@@ -268,5 +268,3 @@ The API does not support user authentication or authorization.
 
 ### Setup and Deployment
 To set up and deploy the API locally or on a server, please refer to the provided setup instructions in the README.md file of the project repository.
-
-This documentation.md file outlines the API endpoints, their request/response formats, sample usage, known limitations, and setup/deployment instructions, as required. You can add this file to your project repository to provide comprehensive documentation for your API.
